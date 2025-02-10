@@ -2,64 +2,64 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int sumSales(int[] sales) { //ищет сумму продаж
-        int sum = 0;
+    public long sumSales(long[] sales) { //ищет сумму продаж
+        long sum = 0;
 
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
+        for (long i = 0; i < sales.length; i++) {
+            sum = sum + sales[(int) i];
         }
 
         return sum;
     }
 
-    public int AverageSales(int[] sales) { //ищет среднюю сумму продаж
-        int sum = sumSales(sales);
-        int average = sum / sales.length;
+    public long AverageSales(long[] sales) { //ищет среднюю сумму продаж
+        long sum = sumSales(sales);
+        long average = sum / sales.length;
 
         return average;
 
     }
 
-    public int maxSumMonth(int[] sales) { //ищет номер месяца с максимальными продажами
-        int maxMonth = 0;
+    public long maxSumMonth(long[] sales) { //ищет номер месяца с максимальными продажами
+        long maxMonth = 0;
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[maxMonth]) {
+        for (long i = 0; i < sales.length; i++) {
+            if (sales[(int) i] >= sales[(int) maxMonth]) {
                 maxMonth = i;
             }
         }
         return maxMonth + 1;
     }
 
-    public int minSumMonth(int[] sales) { //ищет номер месяца с минимальными продажами
-        int minMonth = 0;
+    public long minSumMonth(long[] sales) { //ищет номер месяца с минимальными продажами
+        long minMonth = 0;
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[minMonth]) {
+        for (long i = 0; i < sales.length; i++) {
+            if (sales[(int) i] <= sales[(int) minMonth]) {
                 minMonth = i;
             }
         }
         return minMonth + 1;
     }
 
-    public int AboveAverageSales(int[] sales) { //ищет количество месяцев с продажами выше среднего
-        int average = AverageSales(sales);
-        int count = 0;
+    public long aboveAverageSales(long[] sales) { //ищет количество месяцев с продажами выше среднего
+        long average = AverageSales(sales);
+        long count = 0;
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > average) {
+        for (long i = 0; i < sales.length; i++) {
+            if (sales[(int) i] > average) {
                 count++;
             }
         }
         return count;
     }
 
-    public int BelowAverageSales(int[] sales) { //ищет количество месяцев с продажами ниже среднего
-        int average = AverageSales(sales);
-        int count = 0;
+    public long belowAverageSales(long[] sales) { //ищет количество месяцев с продажами ниже среднего
+        long average = AverageSales(sales);
+        long count = 0;
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < average) {
+        for (long i = 0; i < sales.length; i++) {
+            if (sales[(int) i] < average) {
                 count++;
             }
         }
